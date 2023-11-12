@@ -59,5 +59,116 @@
                   </section>
             </header>
 ```
-### 3. Ajouter des sections pour le contenu de votre CV par exemple un texte de présentation, une section expériences professionnelles (penser à <article>), la liste de vos compétences (penser à <dl><dt><dd>), une section formation, langues, hobbies, etc.
+### 3. Ajouter des sections pour le contenu de votre CV par exemple un texte de présentation, une section expériences professionnelles (penser à <article>), la liste de vos compétences (penser à ), une section formation, langues, hobbies, etc.
 
+```html
+      <article>
+            <h2>Loisirs</h2>
+            <dl>
+                <dt>Sport</dt>
+                <dd>Pratique régulière du football et du tennis.</dd>
+                <dt>Résolution de problèmes</dt>
+                <dd>Participation à des compétitions de programmation et de mathématiques.</dd>
+                <dt>Jeux vidéo</dt>
+                <dd>Passionné par les jeux de stratégie et les simulateurs de vol.</dd>
+                <dt>Lecture</dt>
+                <dd>Lecteur assidu de littérature classique et de science-fiction.</dd>
+            </dl>
+        </article>
+```
+
+### 1.1. un peu de style 
+
+#### 1.1.1. & 2 ajouter un fichier css/style.css
+
+```html
+<link rel="stylesheet" href="css/resume.css">
+```
+
+#### 1.1.3. modifier le style css 
+
+
+```html
+<i class="fa fa-camera-retro"></i>
+```
+
+```css
+html{
+
+      font-size: 1em;
+      line-height: 1.4;
+      /* background-color: #777; */
+}
+#wrapper{
+      max-width: 900px;
+      min-width: 320px;
+      margin:  auto;
+}
+
+header img {
+  float: right;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+header h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+```
+
+### 1.1.4 police d'icon font awesome
+      
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+```
+
+### 1.1.4. b test de font awesome 
+
+```html
+<i class="fa fa-camera-retro"></i>
+```
+![Alt text](docs/image2.png)
+
+### 1.1.5. recharger le  police 
+
+#### 1.1.5. a. En ajoutant le lien suivant dans le head de votre page HTML :
+
+en va utiliser le site [google font](https://fonts.google.com/)
+
+```html
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+```
+
+#### 1.1.5. b. En choisissant la police Lato sur le site Google Fonts :
+![Alt text](docs/image.png)
+
+```css
+body {
+  font-family: 'Lato', sans-serif;
+}
+```
+
+
+![Alt text](docs/image1.png)
+
+### 1.1.6. style le reste de la page 
+
+![Alt text](docs/image4.png)
+
+### 1.1.7 validation des modifications en git adding tag <<CSS>>
+
+```bash
+git add .
+git commit -m "Ajout de style a la page"
+git tag -a CSS -m "CSS"
+git push origin CSS
+
+```
+
+  git config --global user.email "mohamed.elhaddadi2@etu.uae.ac.ma"
+  git config --global user.name "Mohamed EL HADDADI"
