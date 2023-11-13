@@ -170,5 +170,42 @@ git push origin CSS
 
 ```
 
-  git config --global user.email "mohamed.elhaddadi2@etu.uae.ac.ma"
-  git config --global user.name "Mohamed EL HADDADI"
+```bash
+dosi@dosi-Latitude-5520:~/dosi/yanik/TP HTML/ELHADDADI_Mohamed_CV$ git add .
+git commit -m "Ajout de style a la page"
+git tag -a CSS -m "CSS"
+git push origin CSS
+[main 91b162d] Ajout de style a la page
+ 13 files changed, 564 insertions(+), 262 deletions(-)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/ELHADDADI_Mohamed_CV.iml
+ create mode 100644 .idea/misc.xml
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 css/resume.css
+ create mode 100644 docs/image.png
+ create mode 100644 docs/image1.png
+ create mode 100644 docs/image2.png
+ create mode 100644 docs/image4.png
+ copy ubo_resume.html => index.html (58%)
+ rewrite ubo_resume.html (65%)
+Énumération des objets: 22, fait.
+Décompte des objets: 100% (22/22), fait.
+Compression par delta en utilisant jusqu'à 8 fils d'exécution
+Compression des objets: 100% (18/18), fait.
+Écriture des objets: 100% (19/19), 217.80 Kio | 21.78 Mio/s, fait.
+Total 19 (delta 2), réutilisés 0 (delta 0), réutilisés du pack 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Medhaddadi/ELHADDADI_Mohamed_CV.git
+ * [new tag]         CSS -> CSS
+dosi@dosi-Latitude-5520:~/dosi/yanik/TP HTML/ELHADDADI_Mohamed_CV$ git push 
+Total 0 (delta 0), réutilisés 0 (delta 0), réutilisés du pack 0
+To https://github.com/Medhaddadi/ELHADDADI_Mohamed_CV.git
+   86204c2..91b162d  main -> main
+```
+
+## 3. Mise en ligne 
+
+[ELHADDADI_Mohamed_CV](https://medhaddadi.github.io/ELHADDADI_Mohamed_CV/)
+
+## 4. Adaptation responsive
