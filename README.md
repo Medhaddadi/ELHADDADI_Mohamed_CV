@@ -209,3 +209,105 @@ To https://github.com/Medhaddadi/ELHADDADI_Mohamed_CV.git
 [ELHADDADI_Mohamed_CV](https://medhaddadi.github.io/ELHADDADI_Mohamed_CV/)
 
 ## 4. Adaptation responsive
+
+### 4.1. Ajouter un fichier css/responsive.css
+
+```css
+@media screen and (max-width: 740px) {
+    #wrapper {
+        background-color: #777;
+    }
+    
+}
+@media screen and (max-width: 570px) {
+    #wrapper {
+        background-color: #7f7;
+    }
+    
+}
+
+@media screen and (max-width: 570px) {
+    #wrapper {
+        background-color: #77f;
+    }
+    
+}
+```
+
+### 4.2. 2. Ajouter l'utilisation de ce fichier à votre page html et expliquer ce qui se passe lorsqu'on redimensionne la fenêtre de navigation lors de l'affichage de la page.
+
+```html
+<link rel="stylesheet" href="css/responsive.css">
+```
+
+Quand on redimensionne la fenêtre de navigation lors de l'affichage de la page, on remarque que le fond de la page change de couleur en fonction de la taille de la fenêtre.
+
+### 4.3.  Modifier ce fichier pour annuler la modification de couleur de fond et rendre votre page affichage sur une seule colonne pour les tailles d'écran les plus faibles. Utiliser par exemple width="100%" ou changer les différents types de flottements (float :none au lieu de left, par exemple)
+
+```css
+@media screen and (max-width: 740px) {
+    #wrapper {
+        
+
+    }
+    
+}
+@media screen and (max-width: 570px) {
+    #wrapper {
+        background-color: #7f7;
+    }
+    
+}
+@media screen and (max-width: 570px) {
+    #wrapper {
+        body {
+            width: 100%;
+        }
+
+      
+    }
+    
+}
+```
+
+### 4.4. Faire en sorte que les titres principaux soient centrés sur cette unique colonne.
+      
+```css
+      @media screen and (max-width: 740px) {
+      #wrapper {
+            text-align: center;
+      }
+      
+      }
+      @media screen and (max-width: 570px) {
+      #wrapper {
+            text-align: center;
+      
+      }
+      
+      }
+      @media screen and (max-width: 570px) {
+      #wrapper {
+            body {
+                  width: 100%;
+            }
+      
+            
+      }
+      
+      }
+```
+
+
+### 4.5. Valider les modifications dans git et créer un tag << responsive ».
+      
+```bash
+      git add .
+      git commit -m "Ajout de style a la page"
+      git tag -a responsive -m "responsive"
+      git push origin responsive
+```
+      
+     
+
+6. Mettre à jour votre page personnelle sur gitlab
