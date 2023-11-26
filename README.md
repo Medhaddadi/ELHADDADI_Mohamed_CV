@@ -308,6 +308,176 @@ Quand on redimensionne la fenêtre de navigation lors de l'affichage de la page,
       git push origin responsive
 ```
       
-     
+```bash
+[main f233a81] Ajout de style a la page
+ 4 files changed, 129 insertions(+), 2 deletions(-)
+ create mode 100644 css/responsive.css
+Énumération des objets: 13, fait.
+Décompte des objets: 100% (13/13), fait.
+Compression par delta en utilisant jusqu'à 8 fils d'exécution
+Compression des objets: 100% (8/8), fait.
+Écriture des objets: 100% (8/8), 1.69 Kio | 865.00 Kio/s, fait.
+Total 8 (delta 3), réutilisés 0 (delta 0), réutilisés du pack 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/Medhaddadi/ELHADDADI_Mohamed_CV.git
+ * [new tag]         responsive -> responsive
+```
 
-6. Mettre à jour votre page personnelle sur gitlab
+
+### 4.6. Mettre à jour votre page personnelle sur gitlab
+```bash
+git push
+```
+
+
+[ELHADDADI_Mohamed_CV](https://medhaddadi.github.io/ELHADDADI_Mohamed_CV/)
+
+
+## 3. JavaScript
+### 1. Apparition des Descriptions Détaillées
+Pour les formations ou expériences professionnelles :
+
+Ajout de Boutons pour les Détails :
+Pour chaque élément de formation ou d'expérience, ajoutez un bouton « Détails ».
+Utilisez document.createElement pour créer ces boutons dynamiquement en JavaScript.
+Assignez un gestionnaire d'événements à chaque bouton pour gérer les clics.
+
+```html
+<button class="btn" id="btn1">+ Détails</button>
+```
+
+```css
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+```
+
+```javascript
+let elements = document.getElementsByClassName("detailsFormation");
+for (let i = 0; i < elements.length; i++) {
+  let nextElement = elements[i];
+  if (nextElement) {
+      nextElement.style.display = "none";
+  }
+}
+      
+
+Array.from(document.getElementsByClassName("details")).map((element) => {
+      element.addEventListener("click", (e) => {
+            if (e.target.nextElementSibling.style.display === "block") {
+                  e.target.nextElementSibling.style.display = "none";
+                  console.log(e.target.nextElementSibling.style.display)
+            }else {
+                  e.target.nextElementSibling.style.display = "block";
+                  Array.from(document.getElementsByClassName("detailsFormation")).map((element) => {
+                        if (element !== e.target.nextElementSibling) {
+                              element.style.display = "none";
+                        }
+            }
+            );
+            }
+            
+      });
+});
+```
+
+### 3. Modifier l'apparition pour qu'elle soit progressive: la description doit apparaître en grandissant lentement jusqu'à atteindre sa taille normale.
+NB: cette fonction peut être réalisée en modifiant la hauteur de l'élément. Voir aussi setTimeout() et setInterval()
+
+
+```javascript
+
+function growElement(element, maxHeight, intervalTime, step) {
+  var height = 0;
+
+  var intervalId = setInterval(function () {
+    height += step;
+    element.style.height = height + "px";
+
+    if (height >= maxHeight) {
+      clearInterval(intervalId); 
+      element.style.height = maxHeight + "px"; 
+    }
+  }, intervalTime);
+}
+```
+
+use case :
+
+```javascript
+growElement(document.getElementById("detailsFormation1"), 100, 10, 1);
+```
+
+## 2. Apparition des Descriptions Détaillées
+### 4. ajouter l'apparition detaille pour les competences
+
+```html
+  <li>
+                              <strong>Langages :</strong>
+                              <span class="tooltip" data-tooltip="Java">Java</span>,
+                              <span class="tooltip" data-tooltip="C++">C++</span>,
+                              <span class="tooltip" data-tooltip="C">C</span>,
+                              <span class="tooltip" data-tooltip="Python">Python</span>,
+                              <span class="tooltip" data-tooltip="PHP">PHP</span>,
+                              <span class="tooltip" data-tooltip="JavaScript">JavaScript</span>,
+                        </li>
+```
+
+```javascript
+const skillsLi = document.querySelectorAll('.tooltip');
+skillsLi.forEach(skill => {
+  skill.addEventListener('mouseover', () => {
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip-content');
+    tooltip.textContent = skillVsDescription[skill.textContent.toLowerCase()];
+    skill.after(tooltip);
+  })
+  skill.addEventListener('mouseout', () => {
+    skill.nextElementSibling.remove();
+  })
+})
+
+```
+
+### 4.modifier le curseur de la souris pour que le tooltip apparaisse
+
+```javascript
+const skillsLi = document.querySelectorAll(".tooltip");
+const tooltip = document.createElement("div");
+tooltip.classList.add("tooltip-content");
+document.body.appendChild(tooltip);
+skillsLi.forEach((skill) => {
+  console.log(skill.textContent.toLowerCase());
+  skill.addEventListener("mousemove", (e) => {
+
+    tooltip.textContent = skillVsDescription[skill.textContent.toLowerCase()];
+    tooltip.style.left = e.pageX + 15 + "px";
+    tooltip.style.top = e.pageY + 15 + "px";
+    tooltip.style.visibility = "visible";
+  });
+  skill.addEventListener("mouseleave", () => {
+    tooltip.style.visibility = "hidden";
+  });
+});
+
+```
+
+### 5 . deployer le cv en github avec une tag <<description>>  
+
+```bash
+git add .
+git commit -m "Ajout de style a la page"
+git tag -a description -m "description"
+git push origin description
+```
+
+```bash
