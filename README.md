@@ -177,11 +177,6 @@ git tag -a CSS -m "CSS"
 git push origin CSS
 [main 91b162d] Ajout de style a la page
  13 files changed, 564 insertions(+), 262 deletions(-)
- create mode 100644 .idea/.gitignore
- create mode 100644 .idea/ELHADDADI_Mohamed_CV.iml
- create mode 100644 .idea/misc.xml
- create mode 100644 .idea/modules.xml
- create mode 100644 .idea/vcs.xml
  create mode 100644 css/resume.css
  create mode 100644 docs/image.png
  create mode 100644 docs/image1.png
@@ -332,6 +327,19 @@ git push
 
 [ELHADDADI_Mohamed_CV](https://medhaddadi.github.io/ELHADDADI_Mohamed_CV/)
 
+### 5 .Ajouter Micro-donnees
+
+Voir le fichier index.html
+Ajouter Tag <microdata> pour les informations personnelles
+
+```shell
+git add .
+git commit -m "Ajout de microdonnées"
+git tag -a microdonnées -m "microdonnées"
+git push origin microdonnées
+```
+
+
 
 ## 3. JavaScript
 ### 1. Apparition des Descriptions Détaillées
@@ -478,6 +486,5 @@ git add .
 git commit -m "Ajout de style a la page"
 git tag -a description -m "description"
 git push origin description
-```
 
-```bash
+

@@ -1,23 +1,21 @@
 @media screen and (max-width: 740px) {
-      #wrapper {
-            text-align: center;
-      }
-      
-      }
-      @media screen and (max-width: 570px) {
-      #wrapper {
-            text-align: center;
-      
-      }
-      
-      }
-      @media screen and (max-width: 570px) {
-      #wrapper {
-            body {
-                  width: 100%;
-            }
-      
-            
-      }
-      
+    #wrapper {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    #wrapper {
+        text-align: center;
+
+    }
+}
+
+@media screen and (max-width: 570px) {
+    #wrapper {
+        body {
+            width: 100%;
+        }
+    }
+
 }
